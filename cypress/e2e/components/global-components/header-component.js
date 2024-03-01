@@ -1,7 +1,7 @@
 class header {
   static textOfficeSuites = "body";
   elements = {
-    //getIcon : () => cy.get('[alt="Studio by Tishman Speyer"]'),
+    
     getHeader: () => cy.get('#header'),
     getIcon: () => cy.get('header[id="page-header"] img'),
     getCoworkingButton: () =>
@@ -18,14 +18,11 @@ class header {
   validateHeader = () => {
     this.elements.getHeader().should('exist')
   }
-  validateFooter = () => {
-    this.elements.getFooter().should('exist')
-  }
+ 
+
   clickAndValidateIconHome = () => {
     this.elements.getIcon().should("be.visible").click({ multiple: true });
-    //Aserciones que funcionan, pero fallan por problemas en el sitio STG
-    // const title = "Book a Space";
-    // cy.title().should("include", title);
+    
   };
   clickAndValidateCoworkingButton = () => {
     this.elements.getCoworkingButton().should("be.visible").click();
@@ -43,16 +40,12 @@ class header {
   clickAndValidateOfficeSuites = () => {
     this.elements.getOfficeSuites().should("be.visible").click();
     cy.url().should("include", "studio-private");
-    //Aserciones que funcionan, pero fallan por problemas en el sitio STG
-    // const text = "Amenities & Features ";
-    // cy.get("div.wp-block-column h3").eq(0).should("have.text", text);
+    
   };
   clickAndValidateMeetingEvents = () => {
     this.elements.getMeetingEventsButton().should("be.visible").click();
     cy.url().should("include", "studio-gather");
-    //Aserciones que funcionan, pero fallan por problemas en el sitio STG
-    // const text = "Exceptional spaces for unrivaled events ";
-    // cy.contains("h2", text);
+    
   };
   clickAndValidateVirtualOfficeButton = () => {
     this.elements.getVirtualOfficeButton().should("be.visible").click();
@@ -63,9 +56,7 @@ class header {
   clickAndValidateOurCompanyButton = () => {
     this.elements.getOurCompanyButton().should("be.visible").click();
     cy.url().should("include", "about-us");
-    //Aserciones que funcionan, pero fallan por problemas en el sitio STG
-    // const title = "About Us";
-    // cy.title().should("include", title);
+    
   };
 }
 module.exports = new header();

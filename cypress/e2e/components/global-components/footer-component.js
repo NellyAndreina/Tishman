@@ -105,7 +105,7 @@ class footer {
       .then((newWindowUrl) => {
         cy.log(`La nueva ventana se abrió en la URL: ${newWindowUrl}`);
       });
-    //cy.get("h3", { timeout: 15000 }).should("exist");
+    
   };
   clickPhoneNumberLink = () => {
     this.elements.getPhoneFooter().click();
@@ -160,18 +160,6 @@ class footer {
   getTextCopyRight = () => {
     return "© 2023 Tishman Speyer. All Rights Reserved.";
   };
-  //   openNewWindow() {
-  //     cy.window().then((win) => {
-  //       const originalUrl = win.location.href;
-  //       this.elements.getCoworkingFooter().click();
-  //       cy.window().should("not.eq", win);
-  //       cy.window().then((newWindow) => {
-  //         cy.get("h3", { timeout: 15000 }).should("exist");
-  //         const newWindowUrl = newWindow.location.href;
-  //         cy.log(`La nueva ventana se abrió en la URL: ${newWindowUrl}`);
-  //         newWindow.location.href = originalUrl;
-  //       });
-  //     });
-  //   }
+
 }
 module.exports = new footer();
